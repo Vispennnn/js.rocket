@@ -14,6 +14,21 @@ if (state == 2) {
     timer = setInterval (function () {
         countdownNumber = countdownNumber -1;
         document.getElementById('countdown').innerHTML= countdownNumber;
+//be nervous
+        if (countdownNumber > 4 && countdownNumber <= 7) {
+            document.getElementById('nervous').className = 'nervous show';
+            
+        } else {
+            document.getElementById('nervous').className = 'nervous';
+        }
+// cant wait
+        if (countdownNumber > 1 && countdownNumber <= 4) {
+            document.getElementById('cant-wait').className = 'cant-wait show';
+            
+        } else {
+            document.getElementById('cant-wait').className = 'cant-wait';
+        }
+
         if (countdownNumber <= 0) {
             changeState(3);
         };
@@ -26,7 +41,7 @@ var success = setTimeout(function()
 
     console.log('randomNumber:', randomNumber)
 //success
-    if (randomNumber > 5) {
+    if (randomNumber > 2) {
         changeState(4);
 
         } else {
